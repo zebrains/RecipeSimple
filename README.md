@@ -1,1 +1,1 @@
-# RecipieSimple
+# RecipeSimple
