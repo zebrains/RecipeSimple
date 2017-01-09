@@ -1,0 +1,23 @@
+{
+  "name": "recipie-simple",
+  "version": "1.0.0",
+  "description": "Stores recipies for later that may have been found online so you no longer have to dig through bookmarks.",
+  "main": "index.js",
+  "dependencies": {
+    "angular": "^1.6.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zebrains/RecipieSimple.git"
+  },
+  "author": "Steven Alexander",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zebrains/RecipieSimple/issues"
+  },
+  "homepage": "https://github.com/zebrains/RecipieSimple#readme"
+}
