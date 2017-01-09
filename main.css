@@ -1,0 +1,29 @@
+.Recipie-Card {
+  border: 1px solid #000;
+  padding-left: 25px;
+  padding-top: 5px;
+  padding-bottom: 10px;
+  margin-bottom: 25px;
+}
+
+.Recipie-Title {
+  margin-bottom: 20px;
+  margin-top: 0px;
+  color: #0375b4;
+}
+
+.Card-Ingredients-Title {
+  margin-top: 0px;
+}
+
+.Card-Directions-Title {
+  margin-top: 0px;
+}
+
+.Ingredients-Frame {
+  border-right: 1px solid #000;
+}
+
+.Directions-Frame {
+  border-left: 1px solid #0375b4;
+}
