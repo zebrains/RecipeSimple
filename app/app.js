@@ -167,7 +167,7 @@ function convertDirections(rawDirections) {
   var arr = [];
   for (i=0;i<directions.length;i++){
     directions[i] = directions[i].substring(2);
-    if (typeof directions[i] !== 'undefined'){
+    if (directions[i] !== ''){
       arr.push(directions[i]);
     }
   }
