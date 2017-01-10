@@ -1,4 +1,4 @@
-.Recipie-Card {
+.Recipe-Card {
   border: 1px solid #000;
   padding-left: 25px;
   padding-top: 5px;
@@ -6,7 +6,8 @@
   margin-bottom: 25px;
 }
 
-.Recipie-Title {
+
+.Recipe-Title {
   margin-bottom: 20px;
   margin-top: 0px;
   color: #0375b4;

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="recipieSimple">
+<html lang="en" ng-app="recipeSimple">
 <head>
 <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="./bower_components/bootstrap/dist/css/bootstrap.min.css">
@@ -16,36 +16,36 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Recipie Simple</title>
+  <title>recipe Simple</title>
 </head>
-<body ng-controller="RecipieController">
+<body ng-controller="recipeController">
 
 <!-- navBar.html -->
 <navBar></navBar>
 <br/><br/><br/><br/>
 
-<!-- Recipies -->
+<!-- recipes -->
   <div class="container">
     <button type="button" class="btn btn-default pull-right">
       <span class="glyphicon glyphicon-plus"></span> New
     </button>
     <br/><br/>
-    <div class="row Recipie-Card" ng-repeat="recipie in recipies" ng-hide="editing">
-      <button class="btn btn-default pull-right" ng-click="editRecipie(recipie)">
+    <div class="row Recipe-Card" ng-repeat="recipe in recipes" ng-hide="editing">
+      <button class="btn btn-default pull-right" ng-click="editRecipe(recipe)">
         <span class="glyphicon glyphicon-edit"></span>
       </button>
       <div class="">
-        <h1 class="Recipie-Title">{{recipie.name}}</h1>
+        <h1 class="Recipe-Title">{{recipe.name}}</h1>
         <div class="col-md-3">
           <h3 class="Card-Ingredients-Title">Ingredients</h3>
           <ul>
-            <li ng-repeat="ingredient in recipie.ingredients">{{ingredient.name}} - {{ingredient.quantity}}</li>
+            <li ng-repeat="ingredient in recipe.ingredients">{{ingredient.name}} - {{ingredient.quantity}}</li>
           </ul>
         </div>
         <div class="Directions-Frame col-md-9">
           <h3 class="Card-Directions-Title">Directions</h3>
           <ol>
-            <li>Mix all ingredients together in some sort of a really odd dance of insanity. This should make sure that this recipie can not be replicated at all.</li>
+            <li>Mix all ingredients together in some sort of a really odd dance of insanity. This should make sure that this recipe can not be replicated at all.</li>
             <li>There should be more directions...but ther are not. Get over it!</li>
             <li>There should be more directions...but ther are not. Get over it!</li>
             <li>There should be more directions...but ther are not. Get over it!</li>

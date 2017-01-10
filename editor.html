@@ -1,17 +1,17 @@
-<div class="row Recipie-Card" ng-show="editing">
+<div class="row Recipe-Card" ng-show="editing">
   <div class="">
-    <h3 class="Recipie-Title">Title</h3>
-    <input type="text" name="" id="" value="{{selectedRecipie.name}}" ng-model="selectedRecipie.name" />
+    <h3 class="Recipe-Title">Title</h3>
+    <input type="text" name="" id="" value="{{selectedRecipe.name}}" ng-model="selectedRecipe.name" />
     <div class="">
       <div class="col-md-3">
         <h3 class="Card-Ingredients-Title">Ingredients</h3>
-        <textarea name="" id="" cols="30" rows="10" ng-model="selectedRecipie.ingredients">{{selectedRecipie.ingredients}}</textarea>
+        <textarea name="ingredients" id="" cols="30" rows="10">{{selectedRecipe.ingredients | expandingredients}}</textarea>
       </div>
       <div class="col-md-9">
         <h3 class="Card-Directions-Title">Directions</h3>
-        <textarea name="" id="" cols="102" rows="10" ng-model="selectedRecipie.directions">{{selectedRecipie.directions}}</textarea>
+        <textarea name="" id="" cols="102" rows="10" ng-model="selectedRecipe.directions">{{selectedrecipe.directions}}</textarea>
       </div>
-      <button class="btn btn-default pull-right" ng-click="saveRecipie()">
+      <button class="btn btn-default pull-right" ng-click="saveRecipe()">
         <span class="glyphicon glyphicon-save">
         </span> Save
       </button>
