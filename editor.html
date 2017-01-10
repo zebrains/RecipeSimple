@@ -9,7 +9,7 @@
       </div>
       <div class="col-md-9">
         <h3 class="Card-Directions-Title">Directions</h3>
-        <textarea name="" id="" cols="102" rows="10" ng-model="selectedRecipe.directions">{{selectedrecipe.directions}}</textarea>
+        <textarea name="directions" id="" cols="102" rows="10">{{selectedrecipe.directions | expanddirections}}</textarea>
       </div>
       <button class="btn btn-default pull-right" ng-click="saveRecipe()">
         <span class="glyphicon glyphicon-save">

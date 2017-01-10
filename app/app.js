@@ -11,7 +11,7 @@ recipeSimple.controller('recipeController', function recipeController($scope) {
 
   $scope.recipes = [
     {
-      name: 'Joe Jost\'s Pickled Eggs',
+      name: "Joe Jost's Pickled Eggs",
       ingredients: [
           {
             name: "Hard-Boiled Eggs",
@@ -21,10 +21,17 @@ recipeSimple.controller('recipeController', function recipeController($scope) {
             name: "Water",
             quantity: "6 Cups"
           }
+      ],
+      directions: [
+        "Mix all ingredients together in some sort of a really odd dance of insanity. This should make sure that this recipe can not be replicated at all.",
+        "There should be more directions...but ther are not. Get over it!",
+        "There should be more directions...but ther are not. Get over it!",
+        "There should be more directions...but ther are not. Get over it!",
+        "There should be more directions...but ther are not. Get over it!"
       ]
     },
     {
-      name: 'Chicken Soup',
+      name: "Chicken Soup",
       ingredients: [
         {
           name: "Chicken",
@@ -34,6 +41,13 @@ recipeSimple.controller('recipeController', function recipeController($scope) {
           name: "Water",
           quantity: "7 cups"
         }
+      ],
+      directions: [
+        "Mix all ingredients together in some sort of a really odd dance of insanity. This should make sure that this recipe can not be replicated at all.",
+        "There should be more directions...but ther are not. Get over it!",
+        "There should be more directions...but ther are not. Get over it!",
+        "There should be more directions...but ther are not. Get over it!",
+        "There should be more directions...but ther are not. Get over it!"
       ]
     }
   ];
@@ -52,7 +66,8 @@ recipeSimple.controller('recipeController', function recipeController($scope) {
     $scope.selectedRecipeIndex = $scope.recipes.indexOf(recipe);
     console.debug($scope.recipes.indexOf(recipe));
 
-    $("[name='ingredients']").val(expandingredients($scope.selectedRecipe.ingredients));
+    $("[name='ingredients']").val(expandIngredients($scope.selectedRecipe.ingredients));
+    $("[name='directions']").val(expandDirections($scope.selectedRecipe.directions))
   }
 
   $scope.cancelEditing = function() {
@@ -65,8 +80,10 @@ recipeSimple.controller('recipeController', function recipeController($scope) {
     $scope.editing = false;
 
     var rawIngredients = $("[name='ingredients']").val();
+    var rawDirections = $("[name='directions']").val();
     console.debug(rawIngredients);
     $scope.selectedRecipe.ingredients = convertIngredients(rawIngredients);
+    $scope.selectedRecipe.directions = convertDirections(rawDirections);
     $scope.recipes[$scope.selectedrecipeIndex] = $scope.selectedrecipe;
   }
 
@@ -87,13 +104,19 @@ recipeSimple.controller('recipeController', function recipeController($scope) {
 
 .filter('expandingredients', function() {
   return function(input) {
-    return expandingredients(input);
+    return expandIngredients(input);
   };
+})
+
+.filter('expanddirections', function() {
+  return function(input) {
+    return expandDirections(input);
+  }
 })
 
 // Input: Ingredients array (Name + Quantity)
 // Output: String formatted ingredients for text area
-function expandingredients(ingredientsArray) {
+function expandIngredients(ingredientsArray) {
   if (typeof ingredientsArray !== 'undefined'){
     var output = "";
     for(i=0;i<ingredientsArray.length;i++){
@@ -124,4 +147,31 @@ function convertIngredients(rawIngredients) {
 
     console.debug(arr);
     return arr;
+}
+
+function expandDirections(directionsArray) {
+  if (typeof directionsArray !== 'undefined'){
+    var output = "";
+    for(i=0;i<directionsArray.length;i++){
+      output += i+1+". " + directionsArray[i] + "\n";
+      //console.debug(output);
+    }
+    return output;
+  }
+  return "";
+}
+
+function convertDirections(rawDirections) {
+  var directions = rawDirections.split("\n");
+  console.debug(directions);
+  var arr = [];
+  for (i=0;i<directions.length;i++){
+    directions[i] = directions[i].substring(2);
+    if (typeof directions[i] !== 'undefined'){
+      arr.push(directions[i]);
+    }
+  }
+
+  console.debug(arr);
+  return arr;
 }

@@ -45,14 +45,7 @@
         <div class="Directions-Frame col-md-9">
           <h3 class="Card-Directions-Title">Directions</h3>
           <ol>
-            <li>Mix all ingredients together in some sort of a really odd dance of insanity. This should make sure that this recipe can not be replicated at all.</li>
-            <li>There should be more directions...but ther are not. Get over it!</li>
-            <li>There should be more directions...but ther are not. Get over it!</li>
-            <li>There should be more directions...but ther are not. Get over it!</li>
-            <li>There should be more directions...but ther are not. Get over it!</li>
-            <li>There should be more directions...but ther are not. Get over it!</li>
-            <li>There should be more directions...but ther are not. Get over it!</li>
-            <li>There should be more directions...but ther are not. Get over it!</li>
+            <li ng-repeat="direction in recipe.directions track by $index">{{direction}}</li>
           </ol>
         </div>
       </div>
