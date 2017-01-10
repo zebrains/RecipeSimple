@@ -55,4 +55,17 @@ recipieSimple.controller('RecipieController', function RecipieController($scope)
     $scope.recipies[$scope.selectedRecipieIndex] = $scope.selectedRecipie;
   }
 
+})
+.directive('navbar', function($compile) {
+  return {
+    restrict: 'E',
+    templateUrl: 'navBar.html'
+  };
+})
+
+.directive('editor', function($compile) {
+  return {
+    restrict: 'E',
+    templateUrl: 'editor.html'
+  }
 });
