@@ -52,7 +52,7 @@ recipeSimple.controller('recipeController', function recipeController($scope) {
     $scope.selectedRecipeIndex = $scope.recipes.indexOf(recipe);
     console.debug($scope.recipes.indexOf(recipe));
 
-    $("[name='ingredients']").val($scope.selectedRecipe);
+    $("[name='ingredients']").val(expandingredients($scope.selectedRecipe.ingredients));
   }
 
   $scope.cancelEditing = function() {
@@ -87,17 +87,21 @@ recipeSimple.controller('recipeController', function recipeController($scope) {
 
 .filter('expandingredients', function() {
   return function(input) {
-    if (typeof input !== 'undefined'){
-      var output = "";
-      for(i=0;i<input.length;i++){
-        output += "* " + input[i].name + " - " + input[i].quantity + "\n";
-        //console.debug(output);
-      }
-      return output;
-    }
-    return "";
+    return expandingredients(input);
   };
 })
+
+function expandingredients(ingredientsArray) {
+  if (typeof ingredientsArray !== 'undefined'){
+    var output = "";
+    for(i=0;i<ingredientsArray.length;i++){
+      output += "* " + ingredientsArray[i].name + " - " + ingredientsArray[i].quantity + "\n";
+      //console.debug(output);
+    }
+    return output;
+  }
+  return "";
+}
 
 function convertIngredients(rawIngredients) {
     //console.debug(rawIngredients);
