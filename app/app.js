@@ -91,6 +91,8 @@ recipeSimple.controller('recipeController', function recipeController($scope) {
   };
 })
 
+// Input: Ingredients array (Name + Quantity)
+// Output: String formatted ingredients for text area
 function expandingredients(ingredientsArray) {
   if (typeof ingredientsArray !== 'undefined'){
     var output = "";
@@ -103,6 +105,8 @@ function expandingredients(ingredientsArray) {
   return "";
 }
 
+// Input: Ingredients string from text area
+// Output: Ingredients array (Name + Quantity)
 function convertIngredients(rawIngredients) {
     //console.debug(rawIngredients);
 
