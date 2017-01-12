@@ -58,6 +58,18 @@ recipeSimple.controller('recipeController', function recipeController($scope) {
   });
   */
 
+  $scope.newRecipe = function() {
+    console.debug("New recipe was clicked");
+    $scope.editing = true
+
+    $scope.selectedRecipe = {};
+    $scope.selectedRecipeIndex = $scope.recipes.length;
+    $("[name='title']").val("");
+    $("[name='ingredients']").val("");
+    $("[name='directions']").val("");
+    $
+  }
+
   $scope.editRecipe = function(recipe) {
     console.debug("Edit was clicked for index.");
     $scope.editing = true;

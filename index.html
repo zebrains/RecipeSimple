@@ -26,12 +26,14 @@
 
 <!-- recipes -->
   <div class="container">
-    <button type="button" class="btn btn-default pull-right">
-      <span class="glyphicon glyphicon-plus"></span> New
-    </button>
-    <br/><br/>
+    <div class="row">
+      <button type="button" class="btn btn-default pull-right" ng-click="newRecipe()">
+        <span class="glyphicon glyphicon-plus"></span> New
+      </button>
+    </div>
+    <br>
     <div class="row Recipe-Card" ng-repeat="recipe in recipes" ng-hide="editing">
-      <button class="btn btn-default pull-right" ng-click="editRecipe(recipe)">
+      <button class="btn btn-xs btn-default pull-right" ng-click="editRecipe(recipe)">
         <span class="glyphicon glyphicon-edit"></span>
       </button>
       <div class="">
